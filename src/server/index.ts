@@ -3,6 +3,8 @@ import "reflect-metadata";
 import { Application } from "express";
 import { createExpressServer } from "routing-controllers";
 import Home from "./controllers/home";
+import Auth from "./controllers/auth";
+import Protected from "./controllers/protected";
 /**
  * Start Server
  */
@@ -13,7 +15,7 @@ const expressApp: Application = createExpressServer({
   middlewares: [
   ],
   controllers: [
-    Home
+    Home, Auth, Protected
   ],
 });
 export default expressApp;
